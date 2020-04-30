@@ -10,7 +10,6 @@ utils
 from spacy.lang.es import Spanish
 from spacy.lang.es import STOP_WORDS
 from string import punctuation
-from sentence_splitter import SentenceSplitter # recommended by jordi
 import matplotlib.pyplot as plt
 import seaborn as sns
 import matplotlib.patches as mpatches
@@ -39,24 +38,6 @@ def Flatten(ul):
             fl += [i]
     return fl
 
-
-def split_to_sentences(text, target_lang='es'):
-    '''
-    DESCRIPTION: Split text into sentences.
-
-    Parameters
-    ----------
-    text : string
-        String with entire document.
-
-    Returns
-    -------
-    sentences: list of str
-        List with sentences of document
-
-    '''  
-    splitter = SentenceSplitter(language=target_lang)
-    return splitter.split(text) 
 
 
 def tokenize(text):

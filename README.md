@@ -1,11 +1,16 @@
-Warning: requirements.txt has more stuff than needed. List of python packages:
-numpy, spacy, umap, sklearn, sentence-splitter, matplotlib, seaborn, scipy
+Install requirements: 
+
+```
+pip install -r requirements.txt
+```
+
 
 ### Steps: 
-Read text files
-Bag of Words
-Normalize Bag of Words
-KMeans
++ Read text files
++ Bag of Words
++ Normalize Bag of Words (so that euclidean distance is equivalent to cosine distance)
++ UMAP projection to 2D (to be able to visualize clusters)
++ KMeans
 
 
 ### Usage
@@ -22,3 +27,7 @@ If I already know my number of clusters, compute KMeans
 python main.py -i /path/to/directory/ -m clustering -k K
 ```
 
+### TODOs:
++ Enhance BOW: very memory consuming...highly sparse matrices
++ Substitute BOW by Doc2Vec with initialized word embeddings
++ Do KMeans on the original 200D, not on the projected 2D space. Once I have applied KMeans, I can project to 2D and visualize it with colors.
